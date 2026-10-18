@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KaiRo | Donde encontrarás tu detalle deseado</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        softDaisy: '#F4E1A7',
+                        coconutShell: '#3B2414',
+                        dustyCoral: '#DAA095',
+                        pinkSand: '#E7CCC5',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-softDaisy/20 text-coconutShell antialiased selection:bg-dustyCoral selection:text-white">
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-coconutShell/95 backdrop-blur-md text-softDaisy shadow-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo y Nombre -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-dustyCoral shadow-sm group-hover:scale-105 transition-transform bg-coconutShell flex items-center justify-center">
+                    <!-- Logo redondo actualizado -->
+                    <img src="https://i.ibb.co/6R059H1t/Whats-App-Image-2026-09-18-at-10-02-17-AM.jpg" alt="KaiRo Logo" class="w-full h-full object-cover">
+                </div>
+                <span class="text-2xl font-serif font-bold tracking-wider text-softDaisy">kairo</span>
+            </a>
+
+            <!-- Menú de Navegación -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#inicio" class="hover:text-dustyCoral transition-colors">Inicio</a>
+                <a href="#mision" class="hover:text-dustyCoral transition-colors">Nosotros</a>
+                <a href="#catalogo" class="hover:text-dustyCoral transition-colors">Catálogo</a>
+                <a href="#contacto" class="hover:text-dustyCoral transition-colors">Contacto</a>
+            </nav>
+
+            <!-- Acciones / Carrito -->
+            <div class="flex items-center gap-4">
+                <button onclick="toggleCart()" class="relative bg-dustyCoral text-coconutShell px-4 py-2 rounded-full font-semibold flex items-center gap-2 hover:bg-pinkSand transition-all shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                    <span>Carrito</span>
+                    <span id="cart-count" class="absolute -top-2 -right-2 bg-softDaisy text-coconutShell text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center border-2 border-coconutShell shadow">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-[85vh] flex items-center justify-center bg-gradient-to-b from-softDaisy/40 to-pinkSand/20 px-4 py-16 overflow-hidden">
+        <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-softDaisy/60 blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-dustyCoral/20 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto text-center relative z-10 space-y-8">
+            <span class="inline-block bg-dustyCoral/20 text-coconutShell text-xs uppercase tracking-widest px-4 py-2 rounded-full font-bold border border-dustyCoral/30">
+                Valencia, Carabobo - Venezuela
+            </span>
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-coconutShell leading-tight">
+                Donde encontrarás tu <span class="italic text-dustyCoral font-serif">detalle deseado</span>
+            </h1>
+            <p class="text-lg md:text-xl text-coconutShell/80 max-w-2xl mx-auto font-light leading-relaxed">
+                Transformamos momentos ordinarios en recuerdos inolvidables a través de nuestros exclusivos accesorios, collares, pulseras, anillos, zarcillos, llaveros y carteras seleccionados especialmente para ti.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <a href="#catalogo" class="w-full sm:w-auto bg-coconutShell text-softDaisy px-8 py-4 rounded-full font-bold text-base hover:bg-dustyCoral hover:text-coconutShell transition-all shadow-lg transform hover:-translate-y-0.5">
+                    Ver Catálogo
+                </a>
+                <a href="#contacto" class="w-full sm:w-auto border-2 border-coconutShell text-coconutShell px-8 py-3.5 rounded-full font-bold text-base hover:bg-coconutShell hover:text-softDaisy transition-all">
+                    Contáctanos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Misión y Valores -->
+    <section id="mision" class="py-20 bg-white/60 backdrop-blur-sm px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-coconutShell mb-4">Nuestra Esencia</h2>
+                <div class="w-20 h-1 bg-dustyCoral mx-auto rounded-full mb-4"></div>
+                <p class="text-coconutShell/80">Comprometidos en ofrecerte elegancia, calidad y cercanía desde Valencia para toda Venezuela.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Misión -->
+                <div class="bg-softDaisy/30 p-8 rounded-3xl border border-softDaisy shadow-sm hover:shadow-md transition-all">
+                    <div class="w-12 h-12 bg-dustyCoral text-coconutShell rounded-2xl flex items-center justify-center font-bold text-xl mb-6 shadow-inner">
+                        M
+                    </div>
+                    <h3 class="text-2xl font-bold text-coconutShell mb-3">Misión</h3>
+                    <p class="text-coconutShell/80 leading-relaxed">
+                        Llevar alegría y detalles únicos a cada rincón de Valencia y toda Venezuela, seleccionando productos que transmitan amor, estilo y elegancia en cada ocasión especial.
+                    </p>
+                </div>
+
+                <!-- Valores -->
+                <div class="bg-pinkSand/20 p-8 rounded-3xl border border-pinkSand/50 shadow-sm hover:shadow-md transition-all">
+                    <div class="w-12 h-12 bg-coconutShell text-softDaisy rounded-2xl flex items-center justify-center font-bold text-xl mb-6 shadow-inner">
+                        V
+                    </div>
+                    <h3 class="text-2xl font-bold text-coconutShell mb-3">Valores</h3>
+                    <ul class="space-y-2 text-coconutShell/80">
+                        <li class="flex items-center gap-2">✨ <strong class="text-coconutShell">Calidad:</strong> Productos cuidadosamente seleccionados.</li>
+                        <li class="flex items-center gap-2">💖 <strong class="text-coconutShell">Detalle:</strong> Pasión en cada presentación.</li>
+                        <li class="flex items-center gap-2">🤝 <strong class="text-coconutShell">Cercanía:</strong> Atención cálida para toda Venezuela.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catálogo -->
+    <section id="catalogo" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-coconutShell mb-4">Nuestro Catálogo</h2>
+            <div class="w-20 h-1 bg-dustyCoral mx-auto rounded-full mb-4"></div>
+            <p class="text-coconutShell/80">Explora nuestras secciones diseñadas con estilo exclusivo.</p>
+
+            <!-- Filtros por Categoría Actualizados (Collares, Pulseras, Anillos, Zarcillos, Llaveros, Carteras) -->
+            <div class="flex flex-wrap justify-center gap-2 mt-8">
+                <button onclick="filterCategory('all')" class="cat-btn active px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-coconutShell text-softDaisy shadow">Todos</button>
+                <button onclick="filterCategory('collares')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Collares</button>
+                <button onclick="filterCategory('pulseras')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Pulseras</button>
+                <button onclick="filterCategory('anillos')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Anillos</button>
+                <button onclick="filterCategory('zarcillos')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Zarcillos</button>
+                <button onclick="filterCategory('llaveros')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Llaveros</button>
+                <button onclick="filterCategory('carteras')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Carteras</button>
+            </div>
+        </div>
+
+        <!-- Grid de Productos -->
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Collares -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="collares">
+                <div class="relative h-64 overflow-hidden bg-dustyCoral/20">
+                    <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&q=80&w=600" alt="Collar Elegante" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full">Collares</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Collar Delicate Gold</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">Brillo sutil y elegante para destacar en cualquier ocasión.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">\$12.00</span>
+                        <button onclick="addToCart('Collar Delicate Gold', 12.00)" class="bg-dustyCoral text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pulseras -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="pulseras">
+                <div class="relative h-64 overflow-hidden bg-pinkSand/30">
+                    <img src="https://images.unsplash.com/photo-1611591475871-33230c6a5127?auto=format&fit=crop&q=80&w=600" alt="Pulsera Chic" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-pinkSand text-coconutShell text-xs font-bold px-3 py-1 rounded-full">Pulseras</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Pulsera Charm Minimal</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">El complemento ideal para dar personalidad a tus muñecas.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">\$9.00</span>
+                        <button onclick="addToCart('Pulsera Charm Minimal', 9.00)" class="bg-pinkSand text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Anillos -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="anillos">
+                <div class="relative h-64 overflow-hidden bg-softDaisy/30">
+                    <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&q=80&w=600" alt="Anillo Solitario" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-softDaisy text-coconutShell text-xs font-bold px-3 py-1 rounded-full border border-coconutShell/20">Anillos</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Set de Anillos Pure Elegance</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">Diseños sofisticados para realzar la belleza de tus manos.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">\$10.00</span>
+                        <button onclick="addToCart('Set de Anillos Pure Elegance', 10.00)" class="bg-softDaisy text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors border border-coconutShell/20">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Zarcillos -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="zarcillos">
+                <div class="relative h-64 overflow-hidden bg-dustyCoral/20">
+                    <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&q=80&w=600" alt="Zarcillos Pearl" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-dustyCoral text-coconutShell text-xs font-bold px-3 py-1 rounded-full">Zarcillos</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Zarcillos Lumina Perla</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">Toque clásico y moderno para iluminar tu rostro.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">\$11.00</span>
+                        <button onclick="addToCart('Zarcillos Lumina Perla', 11.00)" class="bg-dustyCoral text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Llaveros -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="llaveros">
+                <div class="relative h-64 overflow-hidden bg-softDaisy/30">
+                    <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&q=80&w=600" alt="Llavero Elegante" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-softDaisy text-coconutShell text-xs font-bold px-3 py-1 rounded-full border border-coconutShell/20">Llaveros</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Llavero Personalizado Minimal</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">Diseño sofisticado para llevar tus llaves con máxima distinción.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">\$8.00</span>
+                        <button onclick="addToCart('Llavero Personalizado Minimal', 8.00)" class="bg-softDaisy text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors border border-coconutShell/20">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carteras -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="carteras">
+                <div class="relative h-64 overflow-hidden bg-coconutShell/10">
+                    <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&q=80&w=600" alt="Cartera Chic" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full">Carteras</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Cartera Exec Shell</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">Amplia, moderna y versátil para acompañarte en cada paso.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">\$35.00</span>
+                        <button onclick="addToCart('Cartera Exec Shell', 35.00)" class="bg-coconutShell text-softDaisy px-4 py-2 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Información de Contacto -->
+    <section id="contacto" class="py-20 bg-coconutShell text-softDaisy px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="bg-dustyCoral/20 text-softDaisy text-xs uppercase tracking-widest px-4 py-2 rounded-full font-bold border border-dustyCoral/30">
+                    Estamos en contacto
+                </span>
+                <h2 class="text-4xl font-bold font-serif">¿Lista para encontrar tu detalle deseado?</h2>
+                <p class="text-softDaisy/80 leading-relaxed font-light">
+                    Escríbenos directamente o visítanos en Valencia, Carabobo. Respondemos rápido para ayudarte a elegir el regalo o accesorio ideal.
+                </p>
+                <div class="space-y-4 pt-2">
+                    <!-- Teléfono / WhatsApp con ícono oficial de WhatsApp -->
+                    <a href="https://wa.me/584127555570" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors border border-white/10">
+                        <div class="w-10 h-10 rounded-full bg-[#25D366] text-white flex items-center justify-center font-bold shadow">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                        </div>
+                        <div>
+                            <p class="text-xs text-softDaisy/60 uppercase tracking-wider">Teléfono / WhatsApp</p>
+                            <p class="text-lg font-bold text-softDaisy">0412-7555570</p>
+                        </div>
+                    </a>
+                    <!-- Instagram con ícono oficial de Instagram -->
+                    <a href="https://instagram.com/Kairo_vall" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors border border-white/10">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-[#f58529] via-[#dd2a7b] to-[#8134af] text-white flex items-center justify-center font-bold shadow">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </div>
+                        <div>
+                            <p class="text-xs text-softDaisy/60 uppercase tracking-wider">Instagram Oficial</p>
+                            <p class="text-lg font-bold text-softDaisy">@Kairo_vall</p>
+                        </div>
+                    </a>
+                    <!-- Ubicación -->
+                    <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
+                        <div class="w-10 h-10 rounded-full bg-dustyCoral text-coconutShell flex items-center justify-center font-bold">📍</div>
+                        <div>
+                            <p class="text-xs text-softDaisy/60 uppercase tracking-wider">Ubicación</p>
+                            <p class="text-lg font-bold text-softDaisy">Valencia, Carabobo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario de Pedido rápido -->
+            <div class="bg-white/10 p-8 rounded-3xl backdrop-blur-md border border-white/10 space-y-4">
+                <h3 class="text-2xl font-bold font-serif mb-2">Envíanos un mensaje rápido</h3>
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-softDaisy/70 mb-1">Tu Nombre</label>
+                    <input type="text" id="client-name" placeholder="Ej. María Pérez" class="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-softDaisy placeholder-softDaisy/40 focus:outline-none focus:border-dustyCoral">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-softDaisy/70 mb-1">¿Qué detalle deseas?</label>
+                    <textarea id="client-msg" rows="3" placeholder="Cuéntanos qué producto o accesorio buscas..." class="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-softDaisy placeholder-softDaisy/40 focus:outline-none focus:border-dustyCoral"></textarea>
+                </div>
+                <button onclick="sendWhatsAppMessage()" class="w-full bg-dustyCoral text-coconutShell py-4 rounded-xl font-bold hover:bg-softDaisy transition-colors shadow-lg">
+                    Enviar mensaje por WhatsApp
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/90 text-softDaisy/60 py-8 px-4 text-center text-sm border-t border-white/10">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <span class="font-serif font-bold text-softDaisy">kairo</span>
+                <span>© 2026 - Todos los derechos reservados</span>
+            </div>
+            <p>Valencia, Carabobo - Venezuela</p>
+        </div>
+    </footer>
+
+    <!-- Modal del Carrito de Compras -->
+    <div id="cart-modal" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 text-coconutShell shadow-2xl relative animate-in fade-in zoom-in duration-200">
+            <div class="flex items-center justify-between pb-4 border-b border-stone-100">
+                <h3 class="text-2xl font-bold font-serif">Tu Carrito KaiRo</h3>
+                <button onclick="toggleCart()" class="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center font-bold hover:bg-stone-200">✕</button>
+            </div>
+            <div id="cart-items" class="py-6 max-h-60 overflow-y-auto space-y-4">
+                <p class="text-center text-stone-400 py-4">Tu carrito está vacío</p>
+            </div>
+            <div class="pt-4 border-t border-stone-100 space-y-4">
+                <div class="flex items-center justify-between font-bold text-lg">
+                    <span>Total:</span>
+                    <span id="cart-total">\$0.00</span>
+                </div>
+                <button onclick="checkoutWhatsApp()" class="w-full bg-coconutShell text-softDaisy py-3.5 rounded-xl font-bold hover:bg-dustyCoral hover:text-coconutShell transition-colors shadow">
+                    Finalizar pedido por WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts de Interactividad -->
+    <script>
+        let cart = [];
+
+        function toggleCart() {
+            const modal = document.getElementById('cart-modal');
+            modal.classList.toggle('hidden');
+            modal.classList.toggle('flex');
+        }
+
+        function addToCart(name, price) {
+            const existing = cart.find(item => item.name === name);
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({ name, price, quantity: 1 });
+            }
+            updateCartUI();
+            alert(`¡"${name}" agregado al carrito con éxito!`);
+        }
+
+        function updateCartUI() {
+            const countEl = document.getElementById('cart-count');
+            const itemsEl = document.getElementById('cart-items');
+            const totalEl = document.getElementById('cart-total');
+
+            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            countEl.textContent = totalCount;
+
+            if (cart.length === 0) {
+                itemsEl.innerHTML = '<p class="text-center text-stone-400 py-4">Tu carrito está vacío</p>';
+                totalEl.textContent = '\$0.00';
+                return;
+            }
+
+            let html = '';
+            let total = 0;
+            cart.forEach((item, index) => {
+                total += item.price * item.quantity;
+                html += `
+                    <div class="flex items-center justify-between bg-stone-50 p-3 rounded-2xl">
+                        <div>
+                            <h4 class="font-bold text-sm">${item.name}</h4>
+                            <p class="text-xs text-stone-500">$${item.price.toFixed(2)} x ${item.quantity}</p>
+                        </div>
+                        <button onclick="removeItem(${index})" class="text-red-500 text-xs font-bold px-2 py-1 bg-red-50 rounded-lg hover:bg-red-100">Eliminar</button>
+                    </div>
+                `;
+            });
+            itemsEl.innerHTML = html;
+            totalEl.textContent = `$${total.toFixed(2)}`;
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function checkoutWhatsApp() {
+            if (cart.length === 0) {
+                alert('Tu carrito está vacío.');
+                return;
+            }
+            let text = '¡Hola KaiRo! Quisiera hacer el siguiente pedido:\n\n';
+            let total = 0;
+            cart.forEach(item => {
+                text += `- ${item.quantity}x ${item.name} ($${(item.price * item.quantity).toFixed(2)})\n`;
+                total += item.price * item.quantity;
+            });
+            text += `\n*Total a pagar: $${total.toFixed(2)}*\n\n¡Espero su respuesta para coordinar el pago y envío en Valencia!`;
+            
+            const encoded = encodeURIComponent(text);
+            window.open(`https://wa.me/584127555570?text=${encoded}`, '_blank');
+        }
+
+        function sendWhatsAppMessage() {
+            const name = document.getElementById('client-name').value;
+            const msg = document.getElementById('client-msg').value;
+            if (!name || !msg) {
+                alert('Por favor completa tu nombre y mensaje.');
+                return;
+            }
+            const text = `Hola, soy ${name}. ${msg}`;
+            window.open(`https://wa.me/584127555570?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        function filterCategory(category) {
+            const cards = document.querySelectorAll('.product-card');
+            const buttons = document.querySelectorAll('.cat-btn');
+
+            buttons.forEach(btn => btn.classList.remove('bg-coconutShell', 'text-softDaisy', 'shadow'));
+            event.target.classList.add('bg-coconutShell', 'text-softDaisy', 'shadow');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
