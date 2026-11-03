@@ -39,8 +39,7 @@
             <!-- Logo y Nombre -->
             <a href="#" class="flex items-center gap-3 group">
                 <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-dustyCoral shadow-sm group-hover:scale-105 transition-transform bg-coconutShell flex items-center justify-center">
-                    <!-- Logo local configurado como /cairo.png -->
-                    <img src="cairo.png" alt="KaiRo Logo" class="w-full h-full object-cover">
+                    <img src="logo-kairo.png" alt="KaiRo Logo" class="w-full h-full object-cover">
                 </div>
                 <span class="text-2xl font-serif font-bold tracking-wider text-softDaisy">kairo</span>
             </a>
@@ -136,7 +135,7 @@
             <div class="w-20 h-1 bg-dustyCoral mx-auto rounded-full mb-4"></div>
             <p class="text-coconutShell/80">Explora nuestras secciones diseñadas con estilo exclusivo.</p>
 
-            <!-- Filtros por Categoría (Collares, Pulseras, Anillos, Zarcillos, Llaveros, Carteras) -->
+            <!-- Filtros por Categoría -->
             <div class="flex flex-wrap justify-center gap-2 mt-8">
                 <button onclick="filterCategory('all')" class="cat-btn active px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-coconutShell text-softDaisy shadow">Todos</button>
                 <button onclick="filterCategory('collares')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Collares</button>
@@ -384,7 +383,7 @@
                 cart.push({ name, price, quantity: 1 });
             }
             updateCartUI();
-            alert(`¡"\${name}" agregado al carrito con éxito!`);
+            alert(`¡"${name}" agregado al carrito con éxito!`);
         }
 
         function updateCartUI() {
@@ -408,4 +407,68 @@
                 html += `
                     <div class="flex items-center justify-between bg-stone-50 p-3 rounded-2xl">
                         <div>
-                            <h4 class="font-bold text-sm">${item.name}</h4> <p class="text-xs text-stone-500">$${item.price.toFixed(2)} x${item.quantity
+                            <h4 class="font-bold text-sm">${item.name}</h4>
+                            <p class="text-xs text-stone-500">$${item.price.toFixed(2)} x ${item.quantity}</p>
+                        </div>
+                        <button onclick="removeItem(${index})" class="text-red-500 text-xs font-bold px-2 py-1 bg-red-50 rounded-lg hover:bg-red-100">Eliminar</button>
+                    </div>
+                `;
+            });
+            itemsEl.innerHTML = html;
+            totalEl.textContent = `$${total.toFixed(2)}`;
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function checkoutWhatsApp() {
+            if (cart.length === 0) {
+                alert('Tu carrito está vacío.');
+                return;
+            }
+            let text = '¡Hola KaiRo! Quisiera hacer el siguiente pedido:\n\n';
+            let total = 0;
+            cart.forEach(item => {
+                text += `- ${item.quantity}x ${item.name} ($${(item.price * item.quantity).toFixed(2)})\n`;
+                total += item.price * item.quantity;
+            });
+            text += `\n*Total a pagar: $${total.toFixed(2)}*\n\n¡Espero su respuesta para coordinar el pago y envío en Valencia!`;
+            
+            const encoded = encodeURIComponent(text);
+            window.open(`https://wa.me/584127555570?text=${encoded}`, '_blank');
+        }
+
+        function sendWhatsAppMessage() {
+            const name = document.getElementById('client-name').value.trim();
+            const msg = document.getElementById('client-msg').value.trim();
+            
+            if (!name || !msg) {
+                alert('Por favor completa tu nombre y el mensaje antes de enviar.');
+                return;
+            }
+            
+            const text = `Hola, soy ${name}. ${msg}`;
+            const encoded = encodeURIComponent(text);
+            window.open(`https://wa.me/584127555570?text=${encoded}`, '_blank');
+        }
+
+        function filterCategory(category) {
+            const cards = document.querySelectorAll('.product-card');
+            const buttons = document.querySelectorAll('.cat-btn');
+
+            buttons.forEach(btn => btn.classList.remove('bg-coconutShell', 'text-softDaisy', 'shadow'));
+            event.target.classList.add('bg-coconutShell', 'text-softDaisy', 'shadow');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
