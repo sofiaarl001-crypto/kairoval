@@ -139,17 +139,172 @@
             <div class="flex flex-wrap justify-center gap-2 mt-8">
                 <button onclick="filterCategory('all')" class="cat-btn active px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-coconutShell text-softDaisy shadow">Todos</button>
                 <button onclick="filterCategory('carteras')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Carteras / Tote Bags</button>
-                <button onclick="filterCategory('llaveros')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Llaveros</button>
-                <button onclick="filterCategory('monederos')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Monederos</button>
-                <button onclick="filterCategory('lentes')" class="cat-btn px-5 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all bg-white text-coconutShell border border-coconutShell/20 hover:shadow">Lentes</button>
             </div>
         </div>
 
-        <!-- Grid de Productos (Vacío listo para tus nuevos artículos) -->
+        <!-- Grid de Productos -->
         <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="col-span-full text-center py-16 bg-white/40 rounded-3xl border border-dashed border-stone-300">
-                <p class="text-coconutShell/60 text-lg">Pronto agregaremos nuevos productos al catálogo. ¡Escríbenos por WhatsApp para pedidos especiales!</p>
+            
+            <!-- Cartera Azul de Jean ($25) -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="carteras">
+                <div class="relative h-72 overflow-hidden bg-stone-50 flex items-center justify-center p-3">
+                    <img src="cartera azul jeancon estrella marron_3.jpg" alt="Cartera Azul de Jean" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow z-10">Carteras</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Cartera Azul de Jean</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">Diseño en mezclilla con estrella y correas marrones.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">$25.00</span>
+                        <button onclick="addToCart('Cartera Azul de Jean', 25.00)" class="bg-coconutShell text-softDaisy px-4 py-2 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
             </div>
+
+            <!-- Cartera Amarilla ($28) -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="carteras">
+                <div class="relative h-72 overflow-hidden bg-stone-50 flex items-center justify-center p-3">
+                    <img src="cartera amarillomantequilla_3.jpg" alt="Cartera Amarilla" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow z-10">Carteras</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Cartera Amarilla Mantequilla</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">Tono elegante y suave en tendencia con hebilla decorativa.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">$28.00</span>
+                        <button onclick="addToCart('Cartera Amarilla Mantequilla', 28.00)" class="bg-coconutShell text-softDaisy px-4 py-2 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cartera Roja Animal Print ($17) -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="carteras">
+                <div class="relative h-72 overflow-hidden bg-stone-50 flex items-center justify-center p-3">
+                    <img src="cartera roja animal print_3.jpg" alt="Cartera Roja Animal Print" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow z-10">Carteras</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Cartera Roja Animal Print</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">Texto con sutil estampado y acabado sofisticado en tonos rojos.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">$17.00</span>
+                        <button onclick="addToCart('Cartera Roja Animal Print', 17.00)" class="bg-coconutShell text-softDaisy px-4 py-2 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cartera Roja con Plateado ($30) -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="carteras">
+                <div class="relative h-72 overflow-hidden bg-stone-50 flex items-center justify-center p-3">
+                    <img src="carterta roja con puntos metalicos_3.jpg" alt="Cartera Roja con Plateado" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow z-10">Carteras</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Cartera Roja con Plateado</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">Diseño llamativo con tachuelas y puntos metálicos plateados.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">$30.00</span>
+                        <button onclick="addToCart('Cartera Roja con Plateado', 30.00)" class="bg-coconutShell text-softDaisy px-4 py-2 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tote Bag Blanco con Puntos ($12) -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="carteras">
+                <div class="relative h-72 overflow-hidden bg-stone-50 flex items-center justify-center p-3">
+                    <img src="tote bag blanco con puntos marrones]_3_2.jpg" alt="Tote Bag Blanco con Puntos" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-softDaisy text-coconutShell text-xs font-bold px-3 py-1 rounded-full border border-coconutShell/20 shadow z-10">Carteras</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Tote Bag Blanco con Puntos</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">Espaciosa, cómoda y con un estampado ideal para el día a día.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">$12.00</span>
+                        <button onclick="addToCart('Tote Bag Blanco con Puntos', 12.00)" class="bg-softDaisy text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors border border-coconutShell/20">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cartera Negra con Puntos Blancos ($15) -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="carteras">
+                <div class="relative h-72 overflow-hidden bg-stone-50 flex items-center justify-center p-3">
+                    <img src="cartera negra puntos blancos_3.jpg" alt="Cartera Negra Puntos Blancos" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow z-10">Carteras</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Cartera Negra Puntos Blancos</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">Diseño elegante con detalles de lunares y hebilla central.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">$15.00</span>
+                        <button onclick="addToCart('Cartera Negra Puntos Blancos', 15.00)" class="bg-coconutShell text-softDaisy px-4 py-2 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cartera Blanco con Puntos Negros ($15) -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="carteras">
+                <div class="relative h-72 overflow-hidden bg-stone-50 flex items-center justify-center p-3">
+                    <img src="eb2e8b3a.jpeg" alt="Cartera Blanco con Puntos Negros" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-softDaisy text-coconutShell text-xs font-bold px-3 py-1 rounded-full border border-coconutShell/20 shadow z-10">Carteras</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Cartera Blanco con Puntos Negros</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">Estilo versátil y moderno para complementar tu outfit.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">$15.00</span>
+                        <button onclick="addToCart('Cartera Blanco con Puntos Negros', 15.00)" class="bg-softDaisy text-coconutShell px-4 py-2 rounded-full font-semibold text-sm hover:bg-coconutShell hover:text-softDaisy transition-colors border border-coconutShell/20">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cartera Negra Toda ($25) -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-100 flex flex-col group" data-category="carteras">
+                <div class="relative h-72 overflow-hidden bg-stone-50 flex items-center justify-center p-3">
+                    <img src="cartera negra brillante_3.jpg" alt="Cartera Negra Toda" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-coconutShell text-softDaisy text-xs font-bold px-3 py-1 rounded-full shadow z-10">Carteras</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-coconutShell mb-1">Cartera Negra Toda</h3>
+                        <p class="text-coconutShell/70 text-sm mb-4">Acabado brillante exclusivo y clásico para cualquier ocasión.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-100">
+                        <span class="text-lg font-bold text-coconutShell">$25.00</span>
+                        <button onclick="addToCart('Cartera Negra Toda', 25.00)" class="bg-coconutShell text-softDaisy px-4 py-2 rounded-full font-semibold text-sm hover:bg-dustyCoral hover:text-coconutShell transition-colors">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
